@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block body_attrs %} onload="onSelectDirectionOfConversion()" {% endblock %}
+
+{% block mainContent %}
+
+    <div class="stylebox">
+        <form id="radio_convertTextOrDNA">
+            <input type="radio" id="textToDnaRadio" name="textOrDNA_radio" value="textToDNA"
+                   onclick="onSelectDirectionOfConversion()" checked>Convert text to DNA
+            <input type="radio" id="dnaToTextRadio" name="textOrDNA_radio" value="dnaToText"
+                   onclick="onSelectDirectionOfConversion()">Convert DNA to text
+        </form>
+    </div>
+
+    <article>
+        <div class="conversionImg">
+            <img id="text_to_DNA_img"
+                 src="{{ url_for('static', filename='text_to_DNA.jpeg') }}"
+                 alt="text to DNA icon"
+                 onclick="changeConversionDir()"
+                 style="width:300px;height:auto;border:0;"/>
+
+            <img id="DNA_to_text_img"
+                 src="{{ url_for('static', filename='DNA_to_text.jpeg') }}"
+                 alt="DNA to text icon"
+                 onclick="changeConversionDir()"
+                 style="width:300px;height:auto;border:0;display:none;"/>
+        </div>
+
+        <textarea id="inputTextArea" name="inputTextArea" rows="10" cols="50"></textarea>
+
+        <br/><br/>
+
+        <button class="button button--side" name="clear" onclick="onClear()">Clear</button>
+        <button class="button" name="convert" onclick="doConversion()">Convert</button>
+        <button class="button button--side" name="swap" onclick="onSwap()">Swap</button>
+
+        <br/><br/>
+
+        <textarea id="outputTextArea" name="outputTextArea" rows="10" cols="50"></textarea>
+    </article>
+
+    <br/>
+    <button class="button button--nav" onclick="window.location.href='/about'"">How does it work?</button>
+
+
+{% endblock %}

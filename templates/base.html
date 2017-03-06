@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DNA Encoder</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Signika">
+
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body {% block body_attrs %}{% endblock %}>
+
+    {% block header %}
+        <header>
+            <h2 onClick="window.location.href='/'">Welcome to DNA Encoder!</h2>
+            <p>"The not-all-that-useful tool for translating text in the language of life itself"</br></p>
+        </header>
+    {% endblock %}
+
+    {% block mainContent %} {% endblock %}
+
+    {% block footer %}
+        <footer>
+            <p>Page by Dustin Michels</br>
+                Built using Python, Flask, Jinja2, HTML, CSS, and Javascript.</br>
+                Last updated March 2017
+            </p>
+        </footer>
+    {% endblock %}
+
+</body>
+</html>

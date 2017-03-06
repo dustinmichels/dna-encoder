@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <button class="button button--nav" style="float:left"
+            onclick="window.location.href='/'"">&larr; Back to home</button>
+
+    <h1 style="clear: both">How does it work?</h1>
+
+{% endblock %}
+
+{% block mainContent %}
+
+    <div class="tutDiv" style="background-color: lightgrey">
+        <h2>Step 1. Get a text message to convert to DNA</h2>
+        <img class="tutImg" src="{{ url_for('static', filename='step1.gif') }}"/>
+    </div>
+
+    <div class="tutDiv">
+        <h2>Step 2. Take a single letter and look up its numerical code in an ASCII table</h2>
+        <p><a href="http://www.asciitable.com/">ASCII</a> is a character encoding system that assigns a numerical value
+            to standard english characters.</p>
+        <p>For example, the letter "lowercase h" is assigned the number 104.</p>
+        <br>
+        <img class="tutImg" src="{{ url_for('static', filename='step2.gif') }}"/>
+    </div>
+
+    <div class="tutDiv" style="background-color: lightgrey">
+        <h2>Step 3. Convert the numerical value into binary</h2>
+        <img class="tutImg" src="{{ url_for('static', filename='step3.png') }}"/>
+        <p>All <a href="http://www.asciitable.com/">ASCII</a> characters can be encoded using 8 bits.</p>
+    </div>
+
+    <div class="tutDiv">
+        <h2>Step 4. Look at the first two bits, and convert them into a DNA base.</h2>
+        <img class="tutImg" src="{{ url_for('static', filename='step4.png') }}"/>
+        <p>Two bits can represent four numbers.</p>
+        <img class="tutImg" src="{{ url_for('static', filename='step4-2.png') }}"/>
+        <p>Hey! There are four bases in DNA!</p>
+        <p>This means we can arbitrarily assign a number (0-3) to a base (A,C,G, or T.)</p>
+        <img class="tutImg" src="{{ url_for('static', filename='step4-3.png') }}"/>
+    </div>
+
+    <div class="tutDiv" style="background-color: lightgrey">
+        <h2>Step 5. Repeat for all eight bits</h3>
+        <img class="tutImg" src="{{ url_for('static', filename='step5.gif') }}"/>
+        <p>For a given character, the program currently builds the DNA sequence left to right,
+            while reading bits from right to left.</p>
+        <p>So "h" gets encoded as AGGC rather than CGGA.</p>
+    </div>
+
+    <div class="tutDiv">
+        <h2>Step 6. Repeat this process for all the words in the message!</h2>
+        <img class="tutImg" src="{{ url_for('static', filename='step6.gif') }}"/>
+    </div>
+
+    <button class="button button--nav" style="float:left"
+            onclick="window.location.href='/'"">&larr; Back to home</button>
+    <div style="clear: both"></div>
+
+{% endblock %}

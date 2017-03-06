@@ -1,0 +1,77 @@
+/*
+    style.css
+    Dustin Michels
+*/
+
+body {
+    text-align: center;
+    font-family: "Signika";
+}
+
+footer {
+    background-color: lightgrey;
+    font-size: .8em;
+}
+
+p {
+    margin: 0px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.stylebox {
+    width: 100%;
+    height: 20%;
+    float:left;
+    color: white;
+    background-color: #b92f22;
+}
+
+.button {
+    font-size: 18px;
+    border-radius: 12px;
+    background-color: white;
+
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.button:hover {
+    background-color: #107bae;
+    color: white;
+}
+
+.button--side {
+    font-size: 14px;
+}
+
+.button--nav {
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border-radius: 0;
+    background-color: #f5f7b6;
+}
+
+.button--nav:hover {
+    background-color: #ffeb18;
+    color: black;
+}
+
+.tutDiv {
+    border-top-style: dashed;
+    border-top-color: #b92f22;
+    border-top-width: medium;
+    padding-bottom: 15px;
+}
+
+.tutImg {
+    width: 500px;
+    height: auto;
+    border-style: solid;
+    border-color: #107bae;
+    border-width: medium;
+    border-radius: 5%;
+}
