@@ -1,23 +1,27 @@
-'''
+"""
 api.py
 Dustin Michels
 3 March 2017
-'''
+"""
+
 import sys
 import flask
 from flask import render_template, request
-import DnaToText
-import TextToDNA
+import dna_to_text
+import text_to_dna
 
 app = flask.Flask(__name__)
+
 
 @app.route('/')
 def get_main_page():
     return render_template('index.html')
 
+
 @app.route('/about/')
 def about():
     return render_template('about.html')
+
 
 @app.route('/textToDNA/')
 def textToDNA():
@@ -27,22 +31,23 @@ def textToDNA():
     text = argsDict["inputString"]
 
     try:
-        dna = TextToDNA.getDNA(text)
+        dna = text_to_dna.get_dna(text)
     except ValueError as e:
-        returnStr = "Error! Can't convert that text into DNA.\n\n" + str(e)
-        return returnStr
+        return_str = "Error! Can't convert that text into DNA.\n\n" + str(e)
+        return return_str
 
     return dna
+
 
 @app.route('/dnaToText/')
 def dnaToText():
     # get args from url
-    argsMultiDict = request.args
-    argsDict = argsMultiDict.to_dict()
-    dna = argsDict["inputString"]
+    args_multi_dict = request.args
+    args_dict = args_multi_dict.to_dict()
+    dna = args_dict["inputString"]
 
     try:
-        message = DnaToText.getMessage(dna)
+        message = dna_to_text.get_message(dna)
     except ValueError:
         return "Error! That might not be valid DNA."
 
@@ -50,6 +55,10 @@ def dnaToText():
 
 
 if __name__ == '__main__':
+    """
+    Example usage: "python3 api.py localhost 5000
+    """
+
     if len(sys.argv) != 3:
         print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
