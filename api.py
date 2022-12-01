@@ -13,17 +13,17 @@ import text_to_dna
 app = flask.Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def get_main_page():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/about/')
+@app.route("/about/")
 def about():
-    return render_template('about.html')
+    return render_template("about.html")
 
 
-@app.route('/textToDNA/')
+@app.route("/textToDNA/")
 def textToDNA():
     # get args from url
     argsMultiDict = request.args
@@ -39,7 +39,7 @@ def textToDNA():
     return dna
 
 
-@app.route('/dnaToText/')
+@app.route("/dnaToText/")
 def dnaToText():
     # get args from url
     args_multi_dict = request.args
@@ -54,13 +54,13 @@ def dnaToText():
     return message
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     """
-    Example usage: "python3 api.py localhost 5000
+    Example usage: 'python3 api.py localhost 5000'
     """
 
     if len(sys.argv) != 3:
-        print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
+        print("Usage: {0} host port".format(sys.argv[0]), file=sys.stderr)
         exit()
 
     host = sys.argv[1]

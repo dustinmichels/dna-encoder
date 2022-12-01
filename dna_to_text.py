@@ -22,16 +22,18 @@ def dna_array_to_text_string(dna_array):
     for nucleotide in range(0, len(dna_array)):
 
         # Start building binary string based on base pair values
-        if dna_array[nucleotide] == 'a':
+        if dna_array[nucleotide] == "a":
             byte_string = "00" + byte_string
-        elif dna_array[nucleotide] == 'c':
+        elif dna_array[nucleotide] == "c":
             byte_string = "01" + byte_string
-        elif dna_array[nucleotide] == 'g':
+        elif dna_array[nucleotide] == "g":
             byte_string = "10" + byte_string
-        elif dna_array[nucleotide] == 't':
+        elif dna_array[nucleotide] == "t":
             byte_string = "11" + byte_string
         else:
-            raise ValueError("Non-nucleotide input. Input could not be converted to binary")
+            raise ValueError(
+                "Non-nucleotide input. Input could not be converted to binary"
+            )
 
         # When string is 8 bits long, convert to int, then ASCII char
         # Add that char to "message"
@@ -51,7 +53,9 @@ def dna_array_to_text_string(dna_array):
 
     if byte_counter_reached_eight:
         if return_string_only_has_null_chs:
-            return "Null!\n\n(Note: Four As in a row translate into the 'null' character!)"
+            return (
+                "Null!\n\n(Note: Four As in a row translate into the 'null' character!)"
+            )
         else:
             return message
     else:
