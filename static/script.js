@@ -53,10 +53,10 @@ function doConversion() {
     var outString = "";
 
     if(conversionDirIsTextToDNA()) {
-        var url = '/textToDNA/';
+        var url = '/textToDNA';
     }
     else {
-        var url = '/dnaToText/';
+        var url = '/dnaToText';
     }
 
     xmlHttpRequest = new XMLHttpRequest();

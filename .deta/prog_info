@@ -1,0 +1,1 @@
+{"id":"2ebad788-f34d-4fd6-8455-23baea64bb32","space":3605,"runtime":"python3.9","name":"dna-encoder","path":"f9vyut","project":"a0s3b0n3","account":"144798365827","region":"eu-central-1","deps":["flask"],"envs":null,"public":true,"log_level":"off","cron":""}

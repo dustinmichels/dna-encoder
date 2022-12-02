@@ -1,12 +1,12 @@
 """
-api.py
 Dustin Michels
 3 March 2017
 """
 
-import sys
+
 import flask
 from flask import render_template, request
+
 import dna_to_text
 import text_to_dna
 
@@ -18,12 +18,12 @@ def get_main_page():
     return render_template("index.html")
 
 
-@app.route("/about/")
+@app.route("/about")
 def about():
     return render_template("about.html")
 
 
-@app.route("/textToDNA/")
+@app.route("/textToDNA")
 def textToDNA():
     # get args from url
     argsMultiDict = request.args
@@ -39,7 +39,7 @@ def textToDNA():
     return dna
 
 
-@app.route("/dnaToText/")
+@app.route("/dnaToText")
 def dnaToText():
     # get args from url
     args_multi_dict = request.args
@@ -54,15 +54,15 @@ def dnaToText():
     return message
 
 
-if __name__ == "__main__":
-    """
-    Example usage: 'python3 api.py localhost 5000'
-    """
+# if __name__ == "__main__":
+#     """
+#     Example usage: 'python3 api.py localhost 5000'
+#     """
 
-    if len(sys.argv) != 3:
-        print("Usage: {0} host port".format(sys.argv[0]), file=sys.stderr)
-        exit()
+#     if len(sys.argv) != 3:
+#         print("Usage: {0} host port".format(sys.argv[0]), file=sys.stderr)
+#         exit()
 
-    host = sys.argv[1]
-    port = int(sys.argv[2])
-    app.run(host=host, port=port, debug=True)
+#     host = sys.argv[1]
+#     port = int(sys.argv[2])
+#     app.run(host=host, port=port, debug=True)
