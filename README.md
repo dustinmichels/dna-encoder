@@ -22,15 +22,15 @@ Run the app:
 flask --app main run
 ```
 
-Deploy to [Deta](https://docs.deta.sh/docs/micros/about/):
+Deploy to [Space](https://deta.space/docs/en/introduction/start):
 
 ```sh
-deta deploy
+space push
 ```
 
 ## How it works
 
-See: http://dnaencoder.dustinmichels.com/about/
+See: https://dnaencoder-1-x0198460.deta.app/about
 
 ## What's Inside
 
